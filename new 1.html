@@ -1,0 +1,62 @@
+<html>
+
+<head>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
+</head>
+
+<script>
+$(document).ready(function(){
+ $.ajax({url:"http://www.runoob.com/jquery/ajax-ajax.html",success:function(result){
+        $("#div1").html(result);
+    }});
+$(".loginname").attr("disabled",true);
+$("#pressme").click(function(){ //click pressme to do something
+
+  var div = $(".loginname");
+  $(".loginname").animate({left: '100px'}, "slow").animate({fontSize: '3em'}, "slow").attr("disabled",false);  
+  });
+  
+ $("#press2").click(function(){
+ var div = $(".loginname");
+  div.animate({right: '100px'}, "slow").animate({fontSize: '1em'}, "slow").attr("disabled",false);
+   //$("#123").val("kokokok"); // puting value inside the field
+   //$("#124").val("YES");
+   
+    if($("#123").val()==$("#124").val()){
+ alert("OK");
+ $("#Mobirise").attr("src",'login7.png').animate({right: '11500px'}, "fast").fadeOut("slow"); // src = source
+ }else{
+ alert("NO");
+ return;
+ };
+   
+   $("#show").html("Welcome").animate({fontSize: '3em'}, "slow"); // HTML showing words or photos
+ });
+
+
+
+
+
+
+});
+
+
+
+
+
+
+</script>
+
+
+
+login<input type="text" class="loginname" id="123"></input>; <!--id need to be unique ( need to add # in front of the name ), class can be the same ( need to add . in front of the name )-->
+login1<input type="text" class="loginname" id="124"></input>; 
+password<input type="password"id="password"></input>;
+repeatPassword<input type="password" id="rpassword"></input>
+<button id="pressme">press</button>
+<button id="press2">press2</button>
+
+<img src="login6.png" id="Mobirise" ></img>
+<div id="show"></div> <!--set layer-->
+
+</html>
